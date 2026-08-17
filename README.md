@@ -1,63 +1,57 @@
-Weather API Documentation
+Authentication
 
-A technical writing portfolio project demonstrating how to create clear, structured, and user-friendly API documentation.
+The Weather API uses an API key to authenticate requests. An API key allows the API to identify and authorize your application.
 
-Overview
+API Key
 
-The Weather API allows developers to retrieve weather information for a specific city.
+You must include a valid API key when making requests to the Weather API.
 
-This documentation explains how to get started, authenticate requests, use the available endpoint, understand responses, and troubleshoot common problems.
+For security reasons, keep your API key private and never share it publicly.
 
-What This Documentation Covers
+Adding Your API Key
 
-- Getting started with the API
-- API authentication
-- Available endpoints
-- Request parameters
-- Response fields
-- Common errors
-- Troubleshooting
-
-Documentation
-
-Guide| Description
-"Getting Started" (getting-started.md)| Learn how to make your first API request.
-"Authentication" (authentication.md)| Learn how API keys are used to authenticate requests.
-"API Endpoints" (endpoints.md)| Learn how to use the Weather API endpoint.
-"Troubleshooting" (troubleshooting.md)| Find solutions to common API problems.
+Include your API key as a query parameter in your request.
 
 Example Request
 
 GET /weather?city=Abuja&api_key=YOUR_API_KEY
 
-Example Response
+Replace "YOUR_API_KEY" with your actual API key.
 
-{
-  "city": "Abuja",
-  "temperature": 28,
-  "humidity": 65,
-  "description": "Partly cloudy"
-}
+Authentication Errors
 
-Important Note
+If your request is not properly authenticated, the API may return an error.
 
-This project is a technical writing portfolio sample. The API URL and responses used in the examples are fictional and are provided for documentation purposes only.
+Common causes include:
 
-Purpose
+- Missing API key
+- Invalid API key
+- Expired API key
+- Incorrect API key format
 
-This project demonstrates my ability to:
+How to Resolve Authentication Errors
 
-- Organize technical information clearly
-- Write documentation for developers
-- Explain API concepts in simple language
-- Create step-by-step instructions
-- Document requests, parameters, responses, and errors
-- Structure documentation for easy navigation
+1. Confirm that your API key is correct.
+2. Make sure the API key is included in the request.
+3. Check that the key has not expired.
+4. Make sure there are no unnecessary spaces or characters in the key.
 
-Author
+Security Best Practices
 
-Opila Sunday
+Follow these practices to protect your API key:
 
-Technical Writer | Creative Writer
+- Never publish your API key on GitHub.
+- Do not share your API key with other people.
+- Never include a real API key in screenshots or examples.
+- Store API keys securely.
+- Replace your key immediately if you believe it has been exposed.
 
-This project is part of my technical writing portfolio.
+Example of a Safe Request
+
+Use a placeholder instead of a real API key when sharing documentation:
+
+GET /weather?city=Abuja&api_key=YOUR_API_KEY
+
+Next Steps
+
+Continue to the "API Endpoints" (endpoints.md) guide to learn how to retrieve weather information.
