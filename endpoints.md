@@ -1,25 +1,38 @@
-# API Endpoints
+API Endpoints
 
-This guide explains the main endpoints available in the Weather API.
+This guide explains how to use the Weather API endpoint to retrieve weather information for a specific city.
 
-## Get Weather
+Get Current Weather
 
-Use this endpoint to retrieve weather information for a specific city.
+Use the "/weather" endpoint to retrieve the current weather conditions for a city.
 
-### Request
+Request
+
+Method: "GET"
+
+Endpoint:
+
+/weather
+
+Example Request
 
 GET /weather?city=Abuja&api_key=YOUR_API_KEY
 
-### Parameters
+Request Parameters
 
-- `city` — The name of the city.
-- `api_key` — Your API authentication key.
+Parameter| Type| Required| Description
+"city"| string| Yes| The name of the city.
+"api_key"| string| Yes| Your API authentication key.
 
-### Example
+Example
+
+To retrieve the weather for Abuja:
 
 GET /weather?city=Abuja&api_key=YOUR_API_KEY
 
-### Example Response
+Example Response
+
+A successful request returns a JSON response:
 
 {
   "city": "Abuja",
@@ -28,26 +41,24 @@ GET /weather?city=Abuja&api_key=YOUR_API_KEY
   "description": "Partly cloudy"
 }
 
-## Response Fields
+Response Fields
 
-| Field | Type | Description |
-|---|---|---|
-| city | string | Name of the city |
-| temperature | number | Current temperature |
-| humidity | number | Current humidity percentage |
-| description | string | Brief weather description |
+Field| Type| Description
+"city"| string| Name of the requested city.
+"temperature"| number| Current temperature.
+"humidity"| number| Current humidity percentage.
+"description"| string| Description of the current weather conditions.
 
-## Error Responses
+Error Responses
 
-The API may return an error when a request is invalid.
+The API may return an error when a request cannot be completed.
 
-Common errors include:
+Status Code| Meaning| Possible Cause
+"400"| Bad Request| Missing or invalid parameter.
+"401"| Unauthorized| Missing or invalid API key.
+"404"| Not Found| Requested city or resource was not found.
+"500"| Server Error| Temporary problem with the API server.
 
-- `400 Bad Request` — Invalid or missing parameters.
-- `401 Unauthorized` — Invalid or missing API key.
-- `404 Not Found` — City or endpoint not found.
-- `500 Internal Server Error` — Server-side problem.
+Next Steps
 
-## Next Steps
-
-Continue to the Troubleshooting guide for solutions to common API problems.
+If you encounter an error while using the endpoint, see the "Troubleshooting" (troubleshooting.md) guide for possible solutions.
