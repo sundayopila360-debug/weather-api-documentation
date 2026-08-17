@@ -1,24 +1,34 @@
-# Getting Started
+Getting Started
 
-This guide explains how to begin using the Weather API.
+This guide explains how to make your first request to the Weather API.
 
-## Prerequisites
+Prerequisites
 
-Before using the API, ensure that you have:
+Before using the API, make sure you have:
 
 - An API key
-- Internet access
-- A tool for making HTTP requests
+- An internet connection
+- A tool for sending HTTP requests
 
-## Base URL
+Base URL
+
+All API requests are sent to:
 
 https://api.example.com/v1
 
-## Example Request
+Make Your First Request
 
-GET /weather?city=Abuja
+To retrieve weather information for a city, send a "GET" request to the "/weather" endpoint.
 
-## Example Response
+Example Request
+
+GET /weather?city=Abuja&api_key=YOUR_API_KEY
+
+Replace "YOUR_API_KEY" with your actual API key.
+
+Example Response
+
+A successful request returns weather information in JSON format:
 
 {
   "city": "Abuja",
@@ -27,6 +37,23 @@ GET /weather?city=Abuja
   "description": "Partly cloudy"
 }
 
-## Next Steps
+Understanding the Response
 
-Continue to the Authentication guide to learn how to authorize requests.
+Field| Description
+"city"| The name of the requested city.
+"temperature"| The current temperature.
+"humidity"| The current humidity percentage.
+"description"| A short description of the current weather.
+
+Common Issues
+
+If your request does not work:
+
+1. Check that your API key is correct.
+2. Make sure the city name is spelled correctly.
+3. Check your internet connection.
+4. Confirm that the request URL is correct.
+
+Next Steps
+
+Now that you know how to make a basic request, continue to the "Authentication" (authentication.md) guide to learn more about API authentication.
